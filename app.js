@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import restaurantList from "./utils/mockData";
+import Header from "./src/Header";
+import Restaurant from "./src/Restaurant";
 
-// React Element
-const JsxHeading = () => <h1 id="heading" className="head">  Namaste component for jsx</h1>
-const heading = <h1 id="heading" className="head">  Namaste element for jsx</h1>
-console.log(JsxHeading);
+// App Component
+const AppLayOut = () => {
+  const [restaurantLists, setrestaurantLists] = useState(restaurantList);
+  return (
+    <div className="app">
+      <Header />
+      <div className="filter">
+        <button onClick={() => {
+          const filterData = restaurantLists.filter((res) => res.info.avgRating >= 4);
+          setrestaurantLists(filterData);
+        }} className="filter-btn"> top rated Restaurant </button>
+      </div>
+      <div className="body">
+         { restaurantLists.map((res) => {
+            console.log('w');
+            return <Restaurant key = {res.info.id} resData= {res.info}/>
+         })  }
+      </div>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// function based component creation
-const FunctionComponent = () => {
-    return (
-   <div id= "container">
-       {heading}
-       <JsxHeading />
-       <h1 id="heading" className="head">  Namaste react from Component</h1>
-   </div>);
-}
-
-root.render(<FunctionComponent />);
+root.render(<AppLayOut />);

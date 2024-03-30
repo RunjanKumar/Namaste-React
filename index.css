@@ -1,11 +1,77 @@
-#parent{
-    background-color: greenyellow;
+.header {
+  width: 100%;
+  background-color: lightseagreen;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
-    color: red;
+.logo {
+  width: 100px;
 }
 
-h2 {
-    color: yellow;
+.nav-items > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin-right: 20px;
+}
+.body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Wrap items to the next row when they exceed the container width */
+  /* justify-content: flex-start; */
+}
+
+.restaurant {
+  flex: 0 0 calc(33.33% - 10px); /* Each component takes up one-third of the container's width with some spacing */
+  margin: 2px;
+  padding-bottom: 2px;
+  width: 200px;
+  height: 600px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.restaurant:hover {
+  transform: translateY(-5px); /* Move the div 5px upwards on hover */
+  cursor: pointer; /* Change cursor to a hand pointer on hover */
+
+  background-color: lightblue; /* Change background color on hover */
+}
+
+.food {
+  width: 100%; /* Adjust the width as needed */
+  margin-bottom: 20px; /* Add some bottom margin */
+}
+
+.food img {
+  width: 100%; /* Make sure the image doesn't exceed the container width */
+  height: 300px;
+}
+
+.food-details {
+  padding: 2px;
+  margin: 2px;
+}
+
+.food-details h3 {
+  margin: 5px 0; /* Add some margin for spacing */
+}
+
+.rating-image {
+  width: 25;
+  height: 25;
+}
+
+.filter-btn {
+  margin: 5px;
+  cursor: pointer;
 }
