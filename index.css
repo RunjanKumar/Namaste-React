@@ -71,7 +71,59 @@
   height: 25;
 }
 
+.filter {
+  display: flex;
+}
+
 .filter-btn {
   margin: 5px;
   cursor: pointer;
+}
+
+.shimer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimer-card {
+  width: 30%; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  border: 1px solid #ddd; /* Add border for better visibility */
+  background-color: #aff90168; /* Background color of the shimmer */
+  overflow: hidden; /* Ensure shimmer animation stays within card */
+  position: relative;
+}
+
+.shimer-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+  animation: shimmer 1s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}
+
+.login {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #007bff; /* Blue color, you can change it */
+  color: white;
+  transition: background-color 0.3s;
 }

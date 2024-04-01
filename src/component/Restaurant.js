@@ -1,4 +1,4 @@
-import { CDN_URL, ratting_Star_URL } from "../utils/constant";
+import { CDN_URL, ratting_Star_URL } from "../../utils/constant";
 
 const Restaurant = (props) => {
   const {

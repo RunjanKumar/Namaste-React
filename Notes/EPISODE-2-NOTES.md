@@ -21,3 +21,6 @@ for that work parcel also use other npm packages.
 # transive dependency
 # npx executing the package 
 # cdn is not prefer because use react for need network call
+
+why we need
+how its work
